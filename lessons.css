@@ -1,0 +1,58 @@
+.telo {
+    width: 70%;
+    height: fit-content;
+    border: 1px solid black;
+    margin: auto;
+    user-select: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    width: 100%;
+    height: fit-content;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 30px;
+}
+
+.add {
+    width: 99.8%;
+    height: fit-content;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+#input {
+    width: 80%;
+}
+
+#but {
+    width: 9.5%;
+    border-radius: 15px;
+}
+
+.pole {
+    width: 100%;
+    height: fit-content;
+    /* border: 1px solid black;  */
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+#block {
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+
+}
+
+#del {
+    border-radius: 15px;
+    text-decoration: none;
+}

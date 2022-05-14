@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список</title>
+    <link rel="stylesheet" href="lessons.css">
+</head>
+
+<body>
+    <div class="telo">
+        <div class="title">
+            <span>Мой Список</span>
+        </div>
+        <div class="add">
+            <input type="text" id="input">
+            <button class="but" id="but">Записать</button>
+            <button class="butAllDel" id="but" onclick="AllDel(i)">Удалить все</button>
+        </div>
+        <div class="pole">
+
+        </div>
+    </div>
+    <script>
+        // document.oncontextmenu = ()=>{return false;}
+        let but = document.querySelector('.but');
+        let inputIn = document.querySelector('#input');
+        let i = 0;
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode == 13) add();
+        })
+        but.onclick = () => {
+            add();
+        }
+        function del(num) {
+            document.querySelector('.block' + num).remove();
+        }
+        function add() {
+            
+            if (inputIn.value != '') {
+                let block = document.createElement('div');
+                block.className = "block" + i;
+                block.id = "block";
+                block.innerHTML = inputIn.value + "<button id='del' onclick=del(" + i + ")>Удалить</button>";
+                document.querySelector('.pole').appendChild(block);
+                inputIn.value = '';
+                block.onclick = () => {
+                    let res = document.querySelector('.' + block.className);
+                    if (res.style.backgroundColor != 'green') {
+                        res.style.backgroundColor = 'green';
+                    } else res.style.backgroundColor = 'white';
+                }
+                i++;
+            }
+        }
+        function AllDel(num) {
+            // while (i > 0) {
+            document.querySelector('.pole').remove();
+            let pole = document.createElement('div');
+            pole.className = 'pole';
+            document.querySelector('.telo').appendChild(pole);
+            // }
+        }
+    </script>
+</body>
+
+</html>
